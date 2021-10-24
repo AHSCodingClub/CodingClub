@@ -1,0 +1,24 @@
+onEvent("Food1", "click", function( ) {
+  setScreen("Foodmenu1")
+  playSound("sound://category_bell/vibrant_game_bell_twinkle_positive_touch_1.mp3", false);
+});
+console.log("On Screen 2");
+//Go to Food Screen
+onEvent("foodmenu", "click", function( ) {
+  setScreen("LOGO1");
+   playSound("sound://category_bell/vibrant_game_bell_twinkle_positive_touch_1.mp3", false);
+});
+console.log("On Screen 1");
+//Go Back to Food or Drink Menu
+onEvent("Drink", "click", function( ) {
+  setScreen("Drinkmenu1");
+   playSound("sound://category_bell/vibrant_game_bell_twinkle_positive_touch_1.mp3", false);
+});
+console.log("On Screen 3");
+//Go To Drink Menu
+onEvent("drinkmenu", "click", function( ) {
+  setScreen("LOGO1");
+  playSound("sound://category_bell/vibrant_game_bell_twinkle_positive_touch_1.mp3", false);
+});
+console.log("On Screen 1");
+//Go Back to Food or Drink Menu
