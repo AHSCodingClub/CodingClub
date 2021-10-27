@@ -1,0 +1,93 @@
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+var coin = createSprite(300, 100);
+coin.setAnimation("coin");
+coin.scale = 0.8;
+var a = createSprite(500, 500);
+a.setAnimation("rock");
+a.scale = 0.8;
+var b = createSprite(500, -100);
+b.setAnimation("rock2");
+b.scale = 0.8;
+var c = createSprite(-100, 500);
+c.setAnimation("animation_1");
+c.scale = 0.8;
+var d = createSprite(-100, -100);
+d.setAnimation("animation_2");
+d.scale = 0.8;
+var e = createSprite(300, 200);
+e.setAnimation("monkey_1");
+e.scale = .3;
+function draw() {
+  background("lightblue");
+  if (keyDown("up")) {
+    player.velocityY = -5;
+  }
+  if (keyDown("down")) {
+    player.velocityY = 5;
+  }
+  if (keyDown("right")) {
+    player.velocityX = 5;
+  }
+  if (keyDown("left")) {
+    player.velocityX = -5;
+  }
+  if (keyWentUp("up")) {
+    player.velocityY = 1;
+    player.velocityY = player.velocityY + 1;
+  }
+  if (a.x == 0) {
+    a.x == 500;
+    a.y == randomNumber(50, 350);
+  }
+  if (b.x == 0) {
+    b.x == 500;
+    b.y == randomNumber(50, 350);
+  }
+  if (c.x == 0) {
+    c.x == -100;
+    c.y == randomNumber(50, 350);
+  }
+  if (d.x == 0) {
+    d.x == -100;
+    d.y == randomNumber(50, 350);
+  }
+  if (player.isTouching(coin)) {
+    coin.x = randomNumber(50, 350);
+    coin.y = randomNumber(50, 350);
+  }
+  a.velocityY = -3;
+  a.velocityX = -3;
+  b.velocityY = 3;
+  b.velocityX = -3;
+  c.velocityY = -3;
+  c.velocityX = 3;
+  d.velocityY = 3;
+  d.velocityX = 3;
+  if (player.isTouching(a)) {
+    player.collide(a);
+  }
+  if (player.isTouching(b)) {
+    player.collide(b);
+  }
+  if (player.isTouching(c)) {
+    player.collide(c);
+  }
+  if (player.isTouching(d)) {
+    player.collide(d);
+  }
+  if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+    background("black");
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+    background("black");
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+  }
+  textSize(24);
+  text("Use arrow keys to move your player", 15, 30);
+  drawSprites();
+}
