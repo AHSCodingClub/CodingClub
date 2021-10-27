@@ -1,0 +1,60 @@
+var a;
+var a = createSprite(200, 200);
+a.setAnimation("frog");
+var y;
+var y = createSprite(500, 300);
+y.setAnimation("mushroom");
+var z;
+var z = createSprite(500, 200);
+z.setAnimation("fly");
+var score;
+var score = 0;
+var health;
+var health = 100;
+function draw() {
+  background("cyan");
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  text("Score:", 30, 30);
+  text (score, 100, 30);
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+  if (a.isTouching(z)) {
+    score = score + 1;
+    z.x = randomNumber(400, 400);
+  }
+  if (a.isTouching(y)) {
+    y.x = randomNumber(400, 400);
+    health = health + -10;
+  }
+  if (keyDown("left")) {
+    a.x = a.x + -5;
+  }
+  if (keyDown("right")) {
+    a.x = a.x + 5;
+  }
+  if (keyDown("up")) {
+    a.velocityY = a.velocityY + -5;
+  }
+  if (a.y < 100) {
+    a.velocityY = a.velocityY + 5;
+  }
+  if (300 < a.y) {
+    a.velocityY = 0;
+  }
+  if (z.x < 0) {
+    z.x = randomNumber(400, 400);
+  }
+  if (y.x < 0) {
+    y.x = randomNumber(400, 400);
+  }
+  z.x = z.x + -5;
+  y.x = y.x + -5;
+  drawSprites();
+}
