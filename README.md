@@ -1,9 +1,7 @@
 # CodingClub
 AHS Coding Club demo repo
 
-## Meeting #4 - Wednesday, October 6, 2021
-
-Today, we'll start making pull requests for [Hacktoberfest](https://hacktoberfest.digitalocean.com/). **Hacktoberfest is an annual coding event where you can win a free t-shirt, just for writing code!**
+**Hacktoberfest is an annual coding event where you can win a free t-shirt, just for writing code!**
 
 ### Setting up GitHub and linking it to Hacktoberfest
 First, you'll need to make a GitHub account. That's pretty simple, just go to [github.com/signup](github.com/signup). You can use your school email or personal email, but if you're going to keep on coding, you should probably use your personal (since GitHub is so big and you're definitely going to keep using it).
